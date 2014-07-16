@@ -10,6 +10,7 @@
 
   <div id="user_nav">
     <% if current_user %>
+      <%= image_tag @graph.get_picture('me', 'large') %>
       Signed in as <strong><%= current_user.name %></strong>!
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
     <% else %>
