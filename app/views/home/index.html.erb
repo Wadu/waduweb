@@ -1,1 +1,23 @@
 <h1>Hello Wadú!!</h1>
+
+<div ng-controller='eventsController as eventsCtrl'>
+  <ul>
+    <li ng-repeat='event in eventsCtrl.events'>
+      <h3>{{event.title}}</h3>
+      <p>{{event.description}}</p>
+    </li>
+  </ul>
+
+  <form name='newEvent' ng-submit='eventsCtrl.addEvent()'>
+    <label>Title:</label>
+    <input ng-model='eventsCtrl.event.title' required>
+    <br>
+    <label>Description:</label>
+    <textarea ng-model='eventsCtrl.event.description' required></textarea>
+    <br>
+    <input type='submit' value='Create Event' />
+    <h2>Preview</h2>
+    <h3>{{eventsCtrl.event.title}}</h3>
+    <p>{{eventsCtrl.event.description}}</p>
+  </form>
+</div>

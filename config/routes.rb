@@ -1,6 +1,4 @@
 Wadu::Application.routes.draw do
-  resources :events
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,6 +8,12 @@ Wadu::Application.routes.draw do
   get 'auth/:provider/callback' => 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout' => 'sessions#destroy', as: 'signout'
+
+  resources :events
+
+  namespace :api, defaults: { format: :json } do
+    resources :events
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
