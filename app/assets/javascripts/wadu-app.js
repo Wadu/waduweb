@@ -1,6 +1,12 @@
 (function(){
   var app = angular.module('waduApp', []);
 
+  app.config(function($httpProvider) {
+    var authToken;
+    authToken = $("meta[name=\"csrf-token\"]").attr("content");
+    return $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
+  });
+
   app.controller('eventsController', function(){
     this.events = events;
     this.event = {};
