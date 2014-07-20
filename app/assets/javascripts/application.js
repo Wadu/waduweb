@@ -12,8 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require angular
 //= require angular-resource
 //= require wadu-app
 //= require_tree .
+
+$(document).on('page:load', function() {
+  return $('[ng-app]').each(function() {
+    var module;
+    module = $(this).attr('ng-app');
+    return angular.bootstrap(this, [module]);
+  });
+});
