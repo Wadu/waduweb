@@ -17,11 +17,3 @@
 //= require angular-resource
 //= require wadu-app
 //= require_tree .
-
-$(document).on('page:load', function() {
-  return $('[ng-app]').each(function() {
-    var module;
-    module = $(this).attr('ng-app');
-    return angular.bootstrap(this, [module]);
-  });
-});
