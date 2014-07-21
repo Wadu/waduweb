@@ -25,8 +25,8 @@
 
     this.addEvent = function(){
       Event.save(this.event);
-      this.events.push(this.event);
       this.event = {};
+      this.events = Event.query();
     };
 
     this.editEvent = function(id){
