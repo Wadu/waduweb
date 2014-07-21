@@ -1,5 +1,5 @@
 (function(){
-  var app = angular.module('waduApp', []);
+  var app = angular.module('waduApp', ['ngResource']);
 
   app.config(function($httpProvider) {
     var authToken;
@@ -7,23 +7,45 @@
     return $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
   });
 
-  app.controller('eventsController', function(){
-    this.events = events;
+  app.factory('Event', function($resource){
+    return $resource('/api/events/:id', { id: "@id" }, {'update': {method: 'PUT'}});
+  });
+
+  app.controller('eventsController', function(Event){
+
+    this.events = Event.query();
+
+    this.editMode = false;
+
+    this.findEvent = function(id){
+      this.event = Event.get({ id: id });
+    };
+
     this.event = {};
+
     this.addEvent = function(){
+      Event.save(this.event);
       this.events.push(this.event);
       this.event = {};
     };
+
+    this.editEvent = function(id){
+      var event = Event.get({ id: id });
+      this.event = event;
+      this.editMode = true;
+    };
+
+    this.updateEvent = function(id){
+      Event.update(this.event);
+      this.events = Event.query();
+      this.event = {};
+      this.editMode = false;
+    };
+
+    this.deleteEvent = function(id){
+      Event.delete({ id: id });
+      this.events = Event.query();
+    };
   });
 
-  var events = [
-    {
-      title: 'Evento 1',
-      description: 'este es un evento de ejemplo'
-    },
-    {
-      title: 'Evento 2',
-      description: 'estamos probando que funciona angular'
-    }
-  ];
 })();

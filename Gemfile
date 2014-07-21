@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'omniauth-facebook'
 gem 'koala', '~> 1.10.0rc'
 gem 'angularjs-rails'
+gem 'active_model_serializers'
 
 group :doc do
   gem 'sdoc', require: false
