@@ -2,7 +2,7 @@
 
 <div ng-controller='eventsController as eventsCtrl'>
   <ul>
-    <li ng-repeat='event in eventsCtrl.events'>
+    <li ng-repeat='event in eventsCtrl.events' id="event_{{event.id}}">
       <h3>{{event.title}} <a href='#' ng-click='eventsCtrl.editEvent(event.id)'>Edit</a> - <a href='#' ng-click='eventsCtrl.deleteEvent(event.id)'>X</a></h3>
       <p>{{event.description}}</p>
     </li>

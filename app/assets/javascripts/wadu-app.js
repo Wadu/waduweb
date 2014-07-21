@@ -44,7 +44,7 @@
 
     this.deleteEvent = function(id){
       Event.delete({ id: id });
-      this.events = Event.query();
+      document.getElementById('event_' + id).remove();
     };
   });
 
