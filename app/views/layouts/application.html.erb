@@ -5,8 +5,10 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %></script>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHGP6oUn6koVvWN5IPGH3z8rHnL_jmhpU&libraries=places&sensor=true"></script>
 </head>
-<body>
+<body onload="initialize()">
 
   <div id="user_nav">
     <% if current_user %>
@@ -19,6 +21,6 @@
   </div>
 
   <%= yield %>
-
+  <div id="map_canvas" style="width:800px; height:600px"></div>
 </body>
 </html>
