@@ -28,6 +28,8 @@
     <br>
     <label>Description:</label>
     <textarea ng-model='eventsCtrl.event.description' required></textarea>
+    <div>Dirección: {{eventsCtrl.event.direction}}</div>
+    <input ng-model="eventsCtrl.event.direction" googleplace required/></input>
     <br>
     <input type='submit' value='Update Event' />
   </form>
