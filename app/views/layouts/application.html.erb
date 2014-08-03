@@ -4,9 +4,10 @@
   <title>Wadu</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.css' rel='stylesheet' />
   <%= csrf_meta_tags %>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHGP6oUn6koVvWN5IPGH3z8rHnL_jmhpU&libraries=places&sensor=true"></script>
 </head>
 <body onload="initialize()">
 
@@ -20,7 +21,9 @@
     <% end %>
   </div>
 
-  <%= yield %>
-  <div id="map_canvas" style="width:800px; height:600px"></div>
+  <div id='panel'>
+    <%= yield %>
+  </div>
+  <div id='map'></div>
 </body>
 </html>
