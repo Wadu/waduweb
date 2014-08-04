@@ -16,7 +16,14 @@
 //= require angular-resource
 //= require wadu-app
 //= require maps-app
+//= require jquery.geocomplete.min
 //= require facebook
+//= require geocomplete
+
+function initialize(){
+  initialize_map();
+  initialize_geocomplete();
+}
 
 $(document).on('page:load', function() {
   return $('[ng-app]').each(function() {

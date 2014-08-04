@@ -1,6 +1,6 @@
 var map = '';
 
-function initialize(){
+function initialize_map(){
   L.mapbox.accessToken = "<%= MAPBOX['token'] %>";
   function detectPosition(){
     if (typeof navigator.geolocation == 'object'){

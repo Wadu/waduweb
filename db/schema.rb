@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729021511) do
+ActiveRecord::Schema.define(version: 20140804025109) do
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140729021511) do
     t.datetime "updated_at"
     t.string   "direction"
     t.float    "lat"
-    t.float    "long"
+    t.float    "lng"
   end
 
   create_table "users", force: true do |t|

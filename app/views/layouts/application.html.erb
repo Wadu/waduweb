@@ -4,6 +4,7 @@
   <title>Wadu</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %></script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.css' rel='stylesheet' />
   <%= csrf_meta_tags %>
@@ -11,19 +12,22 @@
 </head>
 <body onload="initialize()">
 
-  <div id="user_nav">
-    <% if current_user %>
-      <%= image_tag @graph.get_picture('me') %>
-      Signed in as <strong><%= current_user.name %></strong>!
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
-    <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <% end %>
-  </div>
-
   <div id='panel'>
+    <div id="user_nav">
+      <% if current_user %>
+        <%= image_tag @graph.get_picture('me') %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <% end %>
+    </div>
     <%= yield %>
   </div>
   <div id='map'></div>
+
+  <!-- load geocomplete -->
+  <script type="text/javascript">
+  </script>
 </body>
 </html>

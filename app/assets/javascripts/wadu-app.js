@@ -24,6 +24,9 @@
     this.event = {};
 
     this.addEvent = function(){
+      this.event.direction = angular.element('#direction').val();
+      this.event.lat = angular.element('#lat').val();
+      this.event.lng = angular.element('#lng').val();
       Event.save(this.event);
       this.event = {};
       this.events = Event.query();

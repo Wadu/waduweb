@@ -13,6 +13,11 @@
     <br>
     <label>Description:</label>
     <textarea ng-model='eventsCtrl.event.description' required></textarea>
+    <div>Dirección:</div>
+    <input id='geocomplete' required/></input>
+    <input type='hidden' ng-model="eventsCtrl.event.direction" id='direction' required/></input>
+    <input type='hidden' ng-model="eventsCtrl.event.lat" id='lat' required/></input>
+    <input type='hidden' ng-model="eventsCtrl.event.lng" id='lng' required/></input>
     <br>
     <input type='submit' value='Create Event' />
     <h2>Preview</h2>
@@ -26,6 +31,11 @@
     <br>
     <label>Description:</label>
     <textarea ng-model='eventsCtrl.event.description' required></textarea>
+    <div>Dirección:</div>
+    <input id='geocomplete' required/></input>
+    <input type='hidden' ng-model="eventsCtrl.event.direction" id='direction' required/></input>
+    <input type='hidden' ng-model="eventsCtrl.event.lat" id='lat' required/></input>
+    <input type='hidden' ng-model="eventsCtrl.event.lng" id='lng' required/></input>
     <br>
     <input type='submit' value='Update Event' />
   </form>
