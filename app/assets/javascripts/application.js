@@ -15,7 +15,8 @@
 //= require angular
 //= require angular-resource
 //= require wadu-app
-//= require_tree .
+//= require maps-app
+//= require facebook
 
 $(document).on('page:load', function() {
   return $('[ng-app]').each(function() {
