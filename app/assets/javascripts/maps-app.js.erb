@@ -14,9 +14,9 @@ function initialize_map(){
 
   function setMyPosition(p){
     map = L.mapbox.map('map', 'sarriagada.j4p9400k').setView([p.coords.latitude, p.coords.longitude], 15);
+    getEvents();
     return map;
   }
-
   detectPosition();
 }
 
@@ -25,10 +25,22 @@ function setLocation(location){
   geocoder.query(location, showMap);
 }
 
-function showMap(err, data) {
+function showMap(err, data){
   if (data.lbounds) {
       map.fitBounds(data.lbounds);
   } else if (data.latlng) {
       map.setView([data.latlng[0], data.latlng[1]], 15);
   }
+}
+
+function getEvents(params){
+  console.log(1);
+  var url = 'http://localhost:3000/api/events';
+  console.log(2);
+  $.getJSON( url, function( data ) {
+    console.log(3);
+    console.log(data);
+    map.featureLayer.setGeoJSON(data);
+    console.log(4);
+  });
 }

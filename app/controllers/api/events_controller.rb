@@ -2,7 +2,7 @@ class Api::EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    render json: Event.all
+    render json: get_events
   end
 
   def show
@@ -49,6 +49,26 @@ class Api::EventsController < ApplicationController
   private
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def get_events
+      Event.all.map do |event|
+        {
+          type: "Event",
+          geometry: {
+            type: "Point",
+            coordinates: [event.lat,event.lng]
+          },
+          properties: {
+            id: event.id,
+            title: event.title,
+            description: event.description,
+            marker_color: "#fc4353",
+            marker_size: "large",
+            marker_symbol: "monument"
+          }
+        }
+      end
     end
 
     def event_params
