@@ -34,7 +34,7 @@ function showMap(err, data){
 }
 
 function getEvents(params){
-  var url = 'http://localhost:5000/api/events';
+  var url = document.location.origin + '/api/events';
   $.getJSON( url, function( data ) {
     map.featureLayer.setGeoJSON(data);
   });
