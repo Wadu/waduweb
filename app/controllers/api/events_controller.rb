@@ -54,18 +54,18 @@ class Api::EventsController < ApplicationController
     def get_events
       Event.all.map do |event|
         {
-          type: "Event",
+          type: "Feature",
           geometry: {
             type: "Point",
-            coordinates: [event.lat,event.lng]
+            coordinates: [event.lng,event.lat]
           },
           properties: {
             id: event.id,
             title: event.title,
             description: event.description,
-            marker_color: "#fc4353",
-            marker_size: "large",
-            marker_symbol: "monument"
+            'marker-color' => '#fc4353',
+            'marker-size' => 'large',
+            'marker-symbol' => 'monument'
           }
         }
       end
