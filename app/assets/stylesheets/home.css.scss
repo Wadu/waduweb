@@ -1,6 +1,21 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  padding: 0;
+  margin: 0;
+  list-style:none;
+  text-decoration:none !important;
+  border-radius:0 !important;
+  font-family:"Lato";
+  font-weight:bold;
+}
+
+body{
+  width:100%;
+  height:100%;
+  background:#000;
+}
 #map {
   position:absolute;
   top:0;
@@ -9,3 +24,453 @@
   width: 80%;
 }
 #panel{ width: 20%; }
+
+hr{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #353535;
+}
+
+$amarillo: #FDC721;
+$amarillo2: #D5AB1B;
+
+
+.row{
+  margin: 0;
+}
+
+.seccion{ padding: 0; }
+
+.logo{
+  width: 100%;
+  background: #252525;
+}
+
+
+.columna1{
+  background: #2A2A2A;
+  box-shadow: -10px 0px 50px #000;
+  z-index: 10;
+  width:232px;
+}
+
+/*  - - - REGISTRO - - -  */
+.registrarse{
+  padding-top: 24px;
+  height:336px;
+  display:none;
+  .input-group{
+    margin-top: 6px;
+    span,input{ border:none; line-height:16px; }
+    span{
+      background:$amarillo;
+      padding: 0 5px;
+      color: #000;
+      font-size: 16px;
+    }
+    .form-control{height:36px;}
+  }
+  .cont-olvid{
+    margin-top: 10px;
+    span, p{
+      display: inline-block;
+      line-height: 20px;
+    }
+    span{
+      color: #555;
+      font-size: 20px;
+    }
+    p{ 
+      color: #aaa;
+      font-size: 12px;
+      float: right;
+      text-align: right;
+    }
+  }
+  .fb{ 
+    width: 100%;
+    padding: 32px 0 10px 0;
+    img{width:100%;}
+  }
+  
+  .nuevo-usuario{
+    width: 100%;
+    background:#000;
+    color: $amarillo;
+    text-align: center;
+    font-size: 14px;
+    line-height: 36px;
+    margin-top: 21px;
+  }
+
+  .ocultar{
+    text-align: center;
+    margin-top:20px;
+    p, span{
+      display:inline-block;
+    }
+    p{
+      font-size: 10px;
+      color: #aaa;
+    }
+    span{
+      padding-left:5px;
+      font-size: 1.3rem;
+      color: #aaa;
+    }
+  }
+}
+
+.registrado{
+  padding-top: 24px;
+  background: rgba(0, 0, 0, 0.4);
+  height:336px;
+  .img-perfil{
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    border: 3px solid $amarillo;
+    overflow: hidden;
+    background-image: url(perfil.jpg);
+    background-size: auto 100%;
+    background-position-x: center;
+  }
+  .nombre{
+    text-align: center;
+    color: #fff;
+    padding-top: 8px;
+    font-size: 16px;
+
+  }
+  .seguidores{
+    margin-top:25px;
+    text-transform: uppercase;
+    p{
+      color:#AAA;
+      font-size: 9px;
+      margin:0;
+    }
+    h4{
+      color:$amarillo;
+      font-size: 20px;
+      margin:0;
+    }
+  }
+  .crear-evento{
+    width: 100%;
+    margin-top: 25px;
+    background: #fdc721;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+    color: #000;
+  }
+  span{
+    padding: 4px;
+    color: #555;
+    position: relative;
+    top: 30px;
+    background: #2A2A2A;
+    border-radius: 15px !important;
+  }
+}
+/*  - - - REGISTRO - - -  */
+
+
+/*  - - - FILTROS - - -  */
+
+.filtros{
+  margin-top:34px;
+  padding-bottom:100px;
+  a{
+    display: block;
+    span,p{ display:inline-block;
+    }
+    span{
+      padding-right:5px;
+      font-size: 22px;
+      color: #555;
+    }
+    p{
+      font-size: 13px;
+      vertical-align:middle;
+      color: #666;
+    }
+  }
+  hr{margin-bottom:15px;}
+  .filtrar{
+    padding-bottom:4px;
+    .on-off,span,p{
+      display:inline-block;
+      line-height: 2rem;
+      margin-right: 5px;
+    }
+    .on-off{
+      height:12px;
+      width:30px;
+      background:$amarillo;
+    }
+    span{
+      color: #666;
+      font-size: 1.7rem;
+    }
+    p{
+      color:#666;
+      font-size:1.4rem;
+      ;
+    }
+  }
+}
+
+/*  - - - FILTROS - - -  */
+
+footer{
+  display:block;
+  width:100%;
+  background: rgba(0, 0, 0, 0.4);
+  text-align:center;
+  line-height:60px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  p{
+    color: $amarillo;
+    font-size: 1.2rem;
+  }
+}
+
+
+.columna2{
+  background: #202020;
+  width:253px;
+  z-index: 5;
+  box-shadow: -10px 0px 50px #000;
+
+}
+
+.buscador{
+  width:100%;
+  padding:0;
+  margin:0;
+  .navbar-form{
+    margin:0;
+    padding:0;
+  }
+  .form-control{
+    width: 100%;
+    height: 49px;
+    border:none !important;
+  }
+}
+
+.tiempo{
+  height:60px;
+  padding: 12px 10px;
+  span,.hora{
+    display:inline-block;
+    color: #555;
+  }
+  span{font-size:27px;}
+  .hora p{
+    font-size: 11px;
+    margin: 0;
+    padding-left: 4px;
+  }
+}
+
+.tiempo:hover{
+  background:#181818;
+  span{color:$amarillo;}
+  p{color:#fff;}
+}
+
+.eventos{
+  padding-top:17px;
+  .evento{
+    width:253px;
+    height:105px;
+    background:#191919;
+    margin-bottom: 20px;
+    .tarjeta{
+      position:absolute;
+      background:$amarillo;
+      z-index: 1;
+      img{
+        height:105px;
+        width: 243px;
+        margin-left: 10px;
+      }
+    }
+    .info-tarjeta{
+      position:absolute;
+      background: rgba(0, 0, 0, 0.82);
+      width: 253px;
+      z-index: 2;
+      .detalles{
+        background:#262626;
+        height: 100%;
+        width: 43px;
+        padding:6px;
+        .tipo,.likes{display:block;}
+        .tipo{
+          color: #090;
+          text-align: center;
+          font-size: 20px;
+          border-bottom: 1px dashed #666;
+          padding-bottom: 10px;
+          padding-top:2px;
+        }
+        .likes{
+          padding-top:16px;
+          color: #666;
+          text-align: center;
+          span{ font-size: 20px; }
+          p{
+            font-size: 11px;
+            margin-top: -6px;
+          }
+        }
+      }
+      .mini-info{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding-left: 54px;
+        h4{
+          color: #fff;
+          margin: 6px 0 37px 0;
+          font-size: 16px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        p {
+          color: #AAA;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .evento:hover .info-tarjeta{z-index:0;}
+}
+
+
+
+.columna3{
+  background: #fff;
+  width:660px;
+}
+
+.portada{
+  width:660px;
+  height:289px;
+  background:#AAA;
+  h1{
+    margin: 0;
+    position: absolute;
+    top: 243px;
+    left: 47px;
+    color: #fff;
+    font-weight: 600;
+  }
+}
+
+
+.mesumo{
+  width:100%;
+  padding-left:50px;
+  .megusta,.amigos{ display:inline-block; }
+  .megusta{
+    padding-top:15px;
+    span,p{
+      display:inline-block;
+      line-height: 18px;
+    }
+    span{
+      font-size: 27px;
+      color: $amarillo2;
+    }
+    p{
+      font-size:18px;
+      color: #666;
+      font-weight: lighter;
+    }
+  }
+  .amigos{
+    background: #66A7C0;
+    float: right;
+    height: 35px;
+    width: 362px;
+  }
+}
+
+.info{
+  .info-img{
+    background: red;
+    width: 200px;
+    height: 90px;
+    margin: auto;
+    margin-top: 30px;
+  }
+  h1{
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+  }
+  .seguir{
+    background: #F1F1F1;
+    height: 25px;
+    line-height: 25px;
+    width: 100px;
+    margin: auto;
+    margin-top: 12px;
+    text-align: center;
+    span,p{ display:inline-block; }
+    span{ color:$amarillo2; }
+    p{ color:#666; font-weight:lighter; }
+  }
+  .fecha-hora-lugar{ 
+    background: #F9F9F9;
+    width: 100%;
+    height: 126px;
+    margin-top: 32px;
+    padding: 10px 45px;
+    .datos{
+      height: 100px;
+      border-right:2px solid #E9E9E9;
+      text-align: center;
+      padding-top:10px;
+      span{
+        display: block;
+        font-size: 33px;
+        color: $amarillo2;
+      }
+      .desde-hasta{
+        padding:0;
+        h3 {
+          padding-top: 15px;
+          font-size: 14px;
+          margin: 0;
+          color: #AAA;
+        }
+        b{font-size:20px;}
+        p{font-weight:lighter;}
+      }
+      .direccion{
+        span{ padding-bottom:13px; }
+        p{ color: #AAA;}
+      }
+    }
+  }
+  .texto{
+    margin-top: 60px;
+    padding:0 50px;
+    text-align:justify;
+  }
+}
+
+
+
+
+
+

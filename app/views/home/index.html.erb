@@ -1,15 +1,5 @@
-<h1>Hello Wadú!!</h1>
-
+<!--
 <div ng-controller='eventsController as eventsCtrl'>
-  <ul>
-    <li ng-repeat='event in eventsCtrl.events' id="event_{{event.properties.id}}">
-      <h3>{{event.properties.title}}
-       <!-- <a href='#' ng-click='eventsCtrl.editEvent(event.id)'>Edit</a> -  -->
-       <a href='#' ng-click='eventsCtrl.deleteEvent(event.properties.id)'>X</a>
-      </h3>
-    </li>
-  </ul>
-
   <form name='newEvent' ng-submit='eventsCtrl.addEvent()' ng-hide='eventsCtrl.editMode'>
     <label>Title:</label>
     <input ng-model='eventsCtrl.event.title' required>
@@ -43,3 +33,8 @@
     <input type='submit' value='Update Event' />
   </form>
 </div>
+ -->
+  <%= render 'home/first_column' %>
+  <%= render 'home/second_column' %>
+  <%= render 'home/third_column' %>
+  <div id='map'></div>

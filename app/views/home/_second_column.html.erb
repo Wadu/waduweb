@@ -1,0 +1,48 @@
+<div class="col-xs-6 col-md-2 columna2 seccion">
+  <div class="buscador">
+    <form class="navbar-form" role="search">
+      <input type="text" class="form-control" placeholder="Buscar un evento en particular">
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-xs-6 tiempo">
+      <span class="glyphicon glyphicon-time"></span>
+      <div class="hora">
+        <p>PRÓXIMAS</p>
+        <p>24 HORAS</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-6 tiempo">
+      <span class="glyphicon glyphicon-refresh"></span>
+      <div class="hora">
+        <p>ÚLTIMOS</p>
+        <p>AGREGADOS</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="eventos" ng-controller='eventsController as eventsCtrl'>
+    <div class="evento" ng-repeat='event in eventsCtrl.events' id="event_{{event.properties.id}}">
+      <div class="tarjeta">
+        <%= image_tag("tarjeta.png", class:"img-tarjeta") %>
+      </div>
+      <div class="info-tarjeta">
+        <div class="detalles">
+          <span class="glyphicon glyphicon-music tipo"></span>
+          <div class="likes">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+            <p>150 k</p>
+          </div>
+        </div>
+        <div class="mini-info">
+          <a href='#' ng-click='eventsCtrl.editEvent(event.id)'>Edit</a> - 
+          <a href='#' ng-click='eventsCtrl.deleteEvent(event.properties.id)'>X</a>
+          <h4>{{event.properties.title}}</h4>
+          <p>Nombre del local</p>
+          <p>FECHA // HORA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

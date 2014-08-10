@@ -3,6 +3,7 @@
 <head>
   <title>Wadu</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %></script>
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.js'></script>
@@ -11,7 +12,7 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 </head>
 <body onload="initialize()">
-
+<!-- 
   <div id='panel'>
     <div id="user_nav">
       <% if current_user %>
@@ -21,13 +22,10 @@
       <% else %>
         <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
       <% end %>
-    </div>
+    </div> -->
+
+  <div class="row">
     <%= yield %>
   </div>
-  <div id='map'></div>
-
-  <!-- load geocomplete -->
-  <script type="text/javascript">
-  </script>
 </body>
 </html>
