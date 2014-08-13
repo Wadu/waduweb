@@ -1,6 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 *{
   padding: 0;
   margin: 0;
@@ -12,10 +13,19 @@
 }
 
 body{
-  width:100%;
+  min-width:1500px;
   height:100%;
   background:#000;
 }
+
+
+hr{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #353535;
+}
+
 #map {
   position:absolute;
   top:0;
@@ -24,13 +34,6 @@ body{
   width: 80%;
 }
 #panel{ width: 20%; }
-
-hr{
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #353535;
-}
 
 $amarillo: #FDC721;
 $amarillo2: #D5AB1B;
@@ -47,6 +50,10 @@ $amarillo2: #D5AB1B;
   background: #252525;
 }
 
+.columna1, .columna2, .columna3{
+  min-height:1000px;
+  margin:auto;
+}
 
 .columna1{
   background: #2A2A2A;
@@ -127,14 +134,14 @@ $amarillo2: #D5AB1B;
   background: rgba(0, 0, 0, 0.4);
   height:336px;
   .img-perfil{
-    margin: auto;
+    margin:auto;
     height: 100px;
     width: 100px;
-    border: 3px solid $amarillo;
-    overflow: hidden;
-    background-image: url(perfil.jpg);
+    border:4px solid $amarillo;
+    background-image:url("perfil.jpg");
     background-size: auto 100%;
-    background-position-x: center;
+    background-position-x:center;
+    border-radius: 100% !important;
   }
   .nombre{
     text-align: center;
@@ -183,7 +190,7 @@ $amarillo2: #D5AB1B;
 .filtros{
   margin-top:34px;
   padding-bottom:100px;
-  a{
+  a.mostrar{
     display: block;
     span,p{ display:inline-block;
     }
@@ -198,28 +205,80 @@ $amarillo2: #D5AB1B;
       color: #666;
     }
   }
-  hr{margin-bottom:15px;}
+  a.mostrar:hover{
+    span{color:$amarillo;}
+    p{color:#fff;}
+  }
+  hr{margin-bottom:20px;}
   .filtrar{
-    padding-bottom:4px;
-    .on-off,span,p{
+    margin-bottom: 15px;
+    .switch,span,p{
       display:inline-block;
-      line-height: 2rem;
       margin-right: 5px;
     }
-    .on-off{
-      height:12px;
-      width:30px;
-      background:$amarillo;
+    .switch{
+      height: 14px;
+      .cmn-toggle {
+        position: absolute;
+        margin-left: -9999px;
+        visibility: hidden;
+      }
+      .cmn-toggle + label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+      }
+      input.cmn-toggle-round + label {
+        padding: 2px;
+        width: 34px;
+        height: 14px;
+        background-color: transparent;
+      }
+      input.cmn-toggle-round + label:before,
+      input.cmn-toggle-round + label:after {
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        bottom: 1px;
+        content: "";
+      }
+      input.cmn-toggle-round + label:before {
+        right: 1px;
+        background-color: #090909;
+        transition: background 0.3s;
+      }
+      input.cmn-toggle-round + label:after {
+        width: 10px;
+        height: 14px;
+        top: -1px;
+        background-color: #fff;
+        border-radius: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: margin 0.3s;
+      }
+      input.cmn-toggle-round:checked + label:before {
+        background-color: $amarillo;
+      }
+      input.cmn-toggle-round:checked + label:after {
+        margin-left: 22px;
+      }
     }
     span{
       color: #666;
-      font-size: 1.7rem;
+      font-size: 17px;
     }
     p{
       color:#666;
-      font-size:1.4rem;
-      ;
+      font-size:14px;
+      margin-bottom:0;
+      vertical-align: top;
     }
+  }
+  .filtrar:hover{
+    p{color:#fff;}
   }
 }
 
@@ -244,9 +303,6 @@ footer{
 .columna2{
   background: #202020;
   width:253px;
-  z-index: 5;
-  box-shadow: -10px 0px 50px #000;
-
 }
 
 .buscador{
@@ -314,7 +370,7 @@ footer{
         padding:6px;
         .tipo,.likes{display:block;}
         .tipo{
-          color: #090;
+          color: #38e;
           text-align: center;
           font-size: 20px;
           border-bottom: 1px dashed #666;
@@ -351,7 +407,7 @@ footer{
       }
     }
   }
-  .evento:hover .info-tarjeta{z-index:0;}
+  /*.evento:hover .info-tarjeta{z-index:0;}*/
 }
 
 
@@ -472,5 +528,12 @@ footer{
 
 
 
-
+.boliches:hover{span{color:#c22;}}
+.bailes:hover{span{color:#fff;}}
+.cines:hover{span{color:#fff;}}
+.cultural:hover{span{color:#fff;}}
+.deportes:hover{span{color:#0d0;}}
+.fiestas:hover{span{color:#fff;}}
+.musica:hover{span{color:#38e;}}
+.otros:hover{span{color:#fff;}}
 
