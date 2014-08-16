@@ -7,6 +7,7 @@
 //= require jquery.geocomplete.min
 //= require facebook
 //= require geocomplete
+//= require home
 
 $(function() {
   initialize_map();

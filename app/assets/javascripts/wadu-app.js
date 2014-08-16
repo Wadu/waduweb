@@ -12,6 +12,7 @@
   });
 
   app.controller('eventsController', function(Event, $http){
+    this.showPanel = false;
 
     this.events = Event.query();
 
