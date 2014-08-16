@@ -13,7 +13,8 @@ function initialize_map(){
   }
 
   function setMyPosition(p){
-    map = L.mapbox.map('map', 'sarriagada.j4p9400k').setView([p.coords.latitude, p.coords.longitude], 15);
+    map = L.mapbox.map('map', 'sarriagada.j4p9400k', { zoomControl: false }).setView([p.coords.latitude, p.coords.longitude], 15);
+    new L.Control.Zoom({ position: 'topright' }).addTo(map);
     getEvents();
     return map;
   }
