@@ -32,7 +32,9 @@ hr{
   bottom:0;
   right: 0;
   width: 80%;
+  z-index: -1;
 }
+
 #panel{ width: 20%; }
 
 $amarillo: #FDC721;
@@ -50,17 +52,22 @@ $amarillo2: #D5AB1B;
   background: #252525;
 }
 
-.columna1, .columna2, .columna3{
+.panel-column, .events-column, .new-event, .show-event-column{
+  background: #fff;
+  box-shadow: -10px 0px 50px #000;
   min-height:1000px;
   margin:auto;
 }
 
-.columna1{
+.panel-column{
   background: #2A2A2A;
   box-shadow: -10px 0px 50px #000;
-  z-index: 10;
   width:232px;
 }
+
+.panel-column{ z-index: 10; }
+.events-column{ z-index: 9; }
+.show-event-column, .new-event{ z-index: 8; }
 
 /*  - - - REGISTRO - - -  */
 .registrarse{
@@ -300,7 +307,7 @@ footer{
 }
 
 
-.columna2{
+.events-column{
   background: #202020;
   width:253px;
 }
