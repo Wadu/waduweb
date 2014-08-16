@@ -1,0 +1,28 @@
+<div class='col-md-12 registrarse'>
+  <div class='input-group'>
+    <span class='input-group-addon'>
+      <span class='glyphicon glyphicon-user'></span>
+    </span>
+    <input type='text' class='form-control' placeholder='E-mail de registro'>
+  </div>
+  <div class='input-group'>
+    <span class='input-group-addon'>
+      <span class='glyphicon glyphicon-lock'></span>
+    </span>
+    <input type='text' class='form-control' placeholder='******'>
+  </div>
+
+  <div class='cont-olvid'>
+    <span class='glyphicon glyphicon-chevron-right'></span>
+    <p>¿Olvidaste tu contraseña?</p>
+  </div>
+  <div class='fb'>
+    <%= link_to image_tag('fb.png'), '/auth/facebook', id: 'sign_in' %>
+  </div>
+  <hr>
+  <div class='nuevo-usuario'>NUEVO USUARIO</div>
+
+  <div class='ocultar'>
+    <p>- - - OCULTAR REGISTRO - - -</p>
+  </div>
+</div>

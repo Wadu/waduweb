@@ -1,0 +1,20 @@
+<div class="col-md-12 registrado">
+  <div class="img-perfil" style="background-image: url(<%=@graph.get_picture('me') %>)">
+  </div>
+  <p class="nombre"><%= current_user.name %></p>
+  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <div class="row seguidores">
+    <div class="col-md-6 col-xs-6">
+      <p>Seguidores</p>
+      <h4>100</h4>
+    </div>
+    <div class="col-md-6 col-xs-6">
+      <p>Siguiendo</p>
+      <h4>100</h4>
+    </div>
+  </div>
+  <div class="crear-evento">
+    CREAR EVENTO
+  </div>
+  <center><span class="glyphicon glyphicon-chevron-up"></span></center>
+</div>

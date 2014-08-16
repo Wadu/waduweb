@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html ng-app='waduApp'>
-<head>
-  <title>Wadu</title>
-  <%= stylesheet_link_tag "application", media: "all" %>
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
-  <%= javascript_include_tag "application" %></script>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-</head>
-<body>
-<!-- 
-  <div id='panel'>
-    <div id="user_nav">
-      <% if current_user %>
-        <%= image_tag @graph.get_picture('me') %>
-        Signed in as <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-      <% end %>
-    </div> -->
+  <head>
+    <title>Wadu</title>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <%= javascript_include_tag "application" %></script>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  </head>
+  <body>
 
-  <div id='map'></div>
-  <%= yield %>
-  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.css' rel='stylesheet' />
-</body>
+    <div id='map'></div>
+    <%= yield %>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.css' rel='stylesheet' />
+  </body>
 </html>
